@@ -1,22 +1,16 @@
-import Hero from "./sections/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import Products from "./sections/Products/Products";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Tech from "./sections/Tech/Tech";
-import Contact from "./sections/Contact/Contact";
-import Footer from "./sections/Footer/Footer";
+import Home from "./pages/home";
+// import AgendaBel from "./pages/AgendaBel";
 
 function App() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <Products />
-
-      <Tech />
-      <Contact />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/proyectos/agendabel" element={<AgendaBel />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
