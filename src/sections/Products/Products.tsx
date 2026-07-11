@@ -193,128 +193,147 @@ export default function Products() {
         </div>
 
         <motion.div
-          className="grid items-center gap-12 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-lg lg:grid-cols-2"
+          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg lg:grid-cols-2"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b] shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
-            <div className="flex items-center gap-2 border-b border-white/10 bg-[#151515] px-5 py-4">
-              <div className="h-3 w-3 rounded-full bg-red-500" />
-              <div className="h-3 w-3 rounded-full bg-yellow-500" />
-              <div className="h-3 w-3 rounded-full bg-green-500" />
+          {/* ========================= */}
+          {/* Columna izquierda */}
+          {/* ========================= */}
 
-              <div className="ml-5 rounded-full bg-[#202020] px-5 py-1 text-xs text-gray-400">
-                farixio.com
+          <div className="space-y-4">
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b] shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-[#151515] px-5 py-4">
+                <div className="h-3 w-3 rounded-full bg-red-500" />
+                <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                <div className="h-3 w-3 rounded-full bg-green-500" />
+
+                <div className="ml-5 rounded-full bg-[#202020] px-5 py-1 text-xs text-gray-400">
+                  farixio.com
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-b-3xl">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImage}
+                    src={proyectoActual.images[currentImage].src}
+                    alt={proyectoActual.images[currentImage].title}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.02 }}
+                    transition={{ duration: 0.25 }}
+                    className="w-full"
+                  />
+                </AnimatePresence>
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-2xl">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={currentImage}
-                  src={proyectoActual.images[currentImage].src}
-                  alt={proyectoActual.images[currentImage].title}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.02 }}
-                  transition={{ duration: 0.25 }}
-                  className="w-full"
-                />
-              </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImage}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25 }}
+                className="rounded-2xl border border-white/10 bg-[#101010] px-5 py-4"
+              >
+                <h4 className="text-lg font-semibold text-white">
+                  {proyectoActual.images[currentImage].title}
+                </h4>
+
+                <p className="mt-2 text-sm leading-6 text-gray-400">
+                  {proyectoActual.images[currentImage].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex items-center justify-center gap-4">
+              <button
+                onClick={() =>
+                  setCurrentImage(
+                    (currentImage - 1 + proyectoActual.images.length) %
+                      proyectoActual.images.length,
+                  )
+                }
+                className="rounded-full border border-white/20 px-3 py-2 transition hover:bg-white/10"
+              >
+                ←
+              </button>
+
+              <span className="min-w-[70px] text-center text-sm text-gray-400">
+                {currentImage + 1} / {proyectoActual.images.length}
+              </span>
+
+              <button
+                onClick={() =>
+                  setCurrentImage(
+                    (currentImage + 1) % proyectoActual.images.length,
+                  )
+                }
+                className="rounded-full border border-white/20 px-3 py-2 transition hover:bg-white/10"
+              >
+                →
+              </button>
             </div>
           </div>
 
-          <div className="border-t border-white/10 bg-[#101010] px-6 py-5">
-            <h4 className="text-lg font-semibold text-white">
-              {proyectoActual.images[currentImage].title}
-            </h4>
+          {/* ========================= */}
+          {/* Columna derecha */}
+          {/* ========================= */}
 
-            <p className="mt-2 text-sm leading-6 text-gray-400">
-              {proyectoActual.images[currentImage].description}
-            </p>
-          </div>
-
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <button
-              onClick={() =>
-                setCurrentImage(
-                  (currentImage - 1 + proyectoActual.images.length) %
-                    proyectoActual.images.length,
-                )
-              }
-              className="rounded-full border border-white/20 px-3 py-2 hover:bg-white/10"
-            >
-              ←
-            </button>
-
-            <span className="min-w-[70px] text-center text-sm font-medium text-gray-400">
-              {currentImage + 1} / {proyectoActual.images.length}
-            </span>
-
-            <button
-              onClick={() =>
-                setCurrentImage(
-                  (currentImage + 1) % proyectoActual.images.length,
-                )
-              }
-              className="rounded-full border border-white/20 px-3 py-2 hover:bg-white/10"
-            >
-              →
-            </button>
-          </div>
-
-          <div>
-            <span className="rounded-full bg-violet-600/20 px-4 py-2 text-sm font-semibold text-violet-300">
+          <div className="flex flex-col justify-center">
+            <span className="w-fit rounded-full bg-violet-600/20 px-4 py-2 text-sm font-semibold text-violet-300">
               {proyectoActual.tag}
             </span>
 
-            <h3 className="mt-6 text-3xl font-bold">{proyectoActual.title}</h3>
+            <h3 className="mt-4 text-3xl font-bold">{proyectoActual.title}</h3>
 
-            <p className="mt-5 leading-8 text-slate-300">
+            <p className="mt-3 leading-7 text-slate-300">
               {proyectoActual.description}
             </p>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 text-slate-200">
+            <div className="mt-5 grid grid-cols-2 gap-3 text-slate-200">
               {proyectoActual.features.map((feature) => (
                 <div key={feature}>✅ {feature}</div>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/10">
-                <a
-                  href="https://wa.me/541170612602"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Contactar
-                </a>
-              </button>
-              <div className="mt-10 flex justify-center gap-4">
-                <button
-                  onClick={() => {
-                    setCurrent((current + 1) % proyectos.length);
-                    setCurrentImage(0);
-                  }}
-                  className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
-                >
-                  ←
-                </button>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <a
+                href="https://wa.me/541170612602"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/10"
+              >
+                Contactar
+              </a>
+            </div>
 
-                <button
-                  onClick={() => {
-                    setCurrent(
-                      (current - 1 + proyectos.length) % proyectos.length,
-                    );
-                    setCurrentImage(0);
-                  }}
-                  className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
-                >
-                  →
-                </button>
-              </div>
+            <div className="mt-8 flex justify-center gap-4">
+              <button
+                onClick={() => {
+                  setCurrent(
+                    (current - 1 + proyectos.length) % proyectos.length,
+                  );
+                  setCurrentImage(0);
+                }}
+                className="rounded-full border border-white/20 px-4 py-2 transition hover:bg-white/10"
+              >
+                ← Proyecto
+              </button>
+
+              <button
+                onClick={() => {
+                  setCurrent((current + 1) % proyectos.length);
+                  setCurrentImage(0);
+                }}
+                className="rounded-full border border-white/20 px-4 py-2 transition hover:bg-white/10"
+              >
+                Proyecto →
+              </button>
             </div>
           </div>
         </motion.div>
