@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/home";
+import ChatBot from "./components/ChatBot";
 // import AgendaBel from "./pages/AgendaBel";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* <Route path="/proyectos/agendabel" element={<AgendaBel />} /> */}
       </Routes>
+      <ChatBot />
     </BrowserRouter>
   );
 }
