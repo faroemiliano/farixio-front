@@ -15,23 +15,31 @@ export default function Navbar() {
         <nav className="hidden items-center gap-8 md:flex">
           <a
             href="#projects"
-            className="text-gray-700 transition-colors hover:text-black"
+            className="rounded-xl bg-violet-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
           >
             Proyectos
           </a>
 
           <a
             href="#services"
-            className="text-gray-700 transition-colors hover:text-black"
+            className="rounded-xl bg-violet-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
           >
             Servicios
           </a>
 
           <a
             href="#contact"
-            className="text-gray-700 transition-colors hover:text-black"
+            className="rounded-xl bg-violet-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
           >
             Contacto
+          </a>
+          <a
+            href="https://emiliano-faro.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-violet-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
+          >
+            Portfolio
           </a>
         </nav>
 
@@ -39,7 +47,7 @@ export default function Navbar() {
           href="https://wa.me/541170612602"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-xl bg-violet-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
+          className="rounded-xl bg-emerald-600 px-5 py-2 font-medium text-white transition hover:bg-violet-700"
         >
           Contactame por WhatsApp
         </a>

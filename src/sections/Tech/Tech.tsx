@@ -4,12 +4,12 @@ const solutions = [
   "Sistemas administrativos",
   "Reservas online",
   "Plataformas SaaS",
-  "Dashboards modernos",
+
   "Automatización de procesos",
   "Sitios web profesionales",
   "Paneles de gestión",
   "APIs y backend",
-  "Experiencias web modernas",
+
   "Productos digitales escalables",
 ];
 
@@ -29,7 +29,8 @@ export default function Tech() {
           </p>
 
           <h2 className="mx-auto max-w-3xl text-4xl font-bold md:text-5xl">
-            Desarrollo productos digitales modernos para negocios
+            Desarrollo productos a medida y soluciones digitales para empresas y
+            emprendedores
           </h2>
         </div>
 

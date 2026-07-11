@@ -30,7 +30,7 @@ export default function Hero() {
 
         <div className="mt-20 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
-            <h3 className="text-4xl font-bold text-violet-400">1+</h3>
+            <h3 className="text-4xl font-bold text-violet-400">2+</h3>
             <p className="mt-2 text-slate-300">Producto funcionando</p>
           </div>
 

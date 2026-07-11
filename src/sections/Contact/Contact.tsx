@@ -73,8 +73,7 @@ export default function Contact() {
         </h2>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300">
-          Estoy disponible para desarrollar plataformas, sistemas SaaS,
-          dashboards y soluciones Full Stack modernas.
+          Si tenés un proyecto en mente, no dudes en contactarme.
         </p>
 
         <div className="mb-12 flex flex-col justify-center gap-4 sm:flex-row">

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import gestionClientes from "../../assets/barberia/gestionClientes.png";
 import gestionGanancias from "../../assets/barberia/gestionGanancias.png";
@@ -42,16 +42,60 @@ export default function Products() {
         "Personalización visual",
       ],
       images: [
-        gestionClientes,
-        gestionGanancias,
-        inicioSite,
-        loginAdmin,
-        loginCliente,
-        misTurnosCliente,
-        registroManual,
-        reservaTurno,
-        serviciosPrecios,
-        turnosAdmin,
+        {
+          src: inicioSite,
+          title: "Inicio del Sitio",
+          description: "Página de bienvenida para el sistema de barbería.",
+        },
+        {
+          src: loginCliente,
+          title: "Login de Cliente",
+          description: "Acceso para los clientes del sistema de barbería.",
+        },
+        {
+          src: reservaTurno,
+          title: "Reserva de Turno",
+          description: "Proceso de reserva de turnos para los clientes.",
+        },
+        {
+          src: misTurnosCliente,
+          title: "Mis Turnos",
+          description: "Visualización de los turnos reservados por el cliente.",
+        },
+        {
+          src: loginAdmin,
+          title: "Login de Administrador",
+          description: "Acceso para el administrador del sistema de barbería.",
+        },
+        {
+          src: turnosAdmin,
+          title: "Turnos del Administrador",
+          description:
+            "Visualización y gestión de turnos por parte del administrador.",
+        },
+        {
+          src: gestionGanancias,
+          title: "Gestión de Ganancias",
+          description:
+            "Funcionalidad para gestionar las ganancias de la barbería.",
+        },
+        {
+          src: serviciosPrecios,
+          title: "Servicios y Precios",
+          description:
+            "Visualización y gestión de servicios y precios disponibles.",
+        },
+        {
+          src: gestionClientes,
+          title: "Gestión de Clientes",
+          description:
+            "Funcionalidad para gestionar la información de los clientes.",
+        },
+        {
+          src: registroManual,
+          title: "Registro Manual",
+          description: "Funcionalidad para registrar clientes manualmente.",
+        },
       ],
     },
     {
@@ -64,21 +108,71 @@ export default function Products() {
         "Calendario",
         "Servicios",
         "Clientes",
-        "Cobros",
+        "Recordatorios E-mail",
         "Configuración",
       ],
       images: [
-        crearProfesional,
-        crearServicio,
-        esteticaLanding,
-        horarioEstetica,
-        listaClientes,
-        misTurnosClient,
-        obtenerDiaHora,
-        obtenerServicio,
-        panelAdmin,
-        reservarTurno,
-        verConfirmarTurnos,
+        {
+          src: esteticaLanding,
+          title: "Inicio del Sitio",
+          description: "Página de bienvenida para el sistema de estética.",
+        },
+        {
+          src: reservarTurno,
+          title: "Reserva de Turno",
+          description: "Proceso de reserva de turnos para los clientes.",
+        },
+        {
+          src: obtenerServicio,
+          title: "Obtener Servicio",
+          description:
+            "Visualización de detalles de los servicios disponibles.",
+        },
+        {
+          src: obtenerDiaHora,
+          title: "Obtener Día y Hora",
+          description: "Selección de día y hora para la reserva del turno.",
+        },
+
+        {
+          src: misTurnosClient,
+          title: "Mis Turnos",
+          description: "Visualización de los turnos reservados por el cliente.",
+        },
+        {
+          src: panelAdmin,
+          title: "Panel Administrativo",
+          description:
+            "Interfaz para la gestión de la estética por parte del administrador.",
+        },
+        {
+          src: verConfirmarTurnos,
+          title: "Ver y Confirmar Turnos",
+          description:
+            "Funcionalidad para ver y confirmar los turnos reservados.",
+        },
+        {
+          src: listaClientes,
+          title: "Lista de Clientes",
+          description: "Visualización de todos los clientes registrados.",
+        },
+        {
+          src: crearServicio,
+          title: "Crear Servicio",
+          description: "Funcionalidad para crear nuevos servicios.",
+        },
+        {
+          src: crearProfesional,
+          title: "Crear Profesional",
+          description: "Funcionalidad para registrar nuevos profesionales.",
+        },
+
+        {
+          src: horarioEstetica,
+          title: "Horario de Estética",
+          description:
+            "Funcionalidad para configurar el horario de atención de la estética.",
+        },
       ],
     },
   ];
@@ -105,26 +199,41 @@ export default function Products() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="rounded-3xl border border-white/10 bg-[#111111] p-4 shadow-2xl">
-            {/* Barra del navegador */}
-            <div className="mb-4 flex items-center gap-2 border-b border-white/10 pb-3">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b] shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
+            <div className="flex items-center gap-2 border-b border-white/10 bg-[#151515] px-5 py-4">
               <div className="h-3 w-3 rounded-full bg-red-500" />
               <div className="h-3 w-3 rounded-full bg-yellow-500" />
               <div className="h-3 w-3 rounded-full bg-green-500" />
 
-              <div className="ml-4 flex-1 rounded-full bg-[#1d1d1d] px-4 py-1 text-center text-xs text-gray-500">
-                farixio.app
+              <div className="ml-5 rounded-full bg-[#202020] px-5 py-1 text-xs text-gray-400">
+                farixio.com
               </div>
             </div>
 
-            {/* Imagen */}
-            <div className="overflow-hidden rounded-2xl bg-black">
-              <img
-                src={proyectoActual.images[currentImage]}
-                alt={proyectoActual.title}
-                className="w-full transition duration-500 hover:scale-[1.02]"
-              />
+            <div className="overflow-hidden rounded-2xl">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImage}
+                  src={proyectoActual.images[currentImage].src}
+                  alt={proyectoActual.images[currentImage].title}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.02 }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full"
+                />
+              </AnimatePresence>
             </div>
+          </div>
+
+          <div className="border-t border-white/10 bg-[#101010] px-6 py-5">
+            <h4 className="text-lg font-semibold text-white">
+              {proyectoActual.images[currentImage].title}
+            </h4>
+
+            <p className="mt-2 text-sm leading-6 text-gray-400">
+              {proyectoActual.images[currentImage].description}
+            </p>
           </div>
 
           <div className="mt-5 flex items-center justify-center gap-3">
@@ -140,15 +249,9 @@ export default function Products() {
               ←
             </button>
 
-            {proyectoActual.images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImage(index)}
-                className={`h-2.5 w-2.5 rounded-full transition ${
-                  currentImage === index ? "bg-violet-500" : "bg-white/30"
-                }`}
-              />
-            ))}
+            <span className="min-w-[70px] text-center text-sm font-medium text-gray-400">
+              {currentImage + 1} / {proyectoActual.images.length}
+            </span>
 
             <button
               onClick={() =>
@@ -180,10 +283,6 @@ export default function Products() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <button className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-700">
-                Ver proyecto
-              </button>
-
               <button className="rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/10">
                 <a
                   href="https://wa.me/541170612602"
@@ -195,18 +294,22 @@ export default function Products() {
               </button>
               <div className="mt-10 flex justify-center gap-4">
                 <button
-                  onClick={() =>
-                    setCurrent(
-                      (current - 1 + proyectos.length) % proyectos.length,
-                    )
-                  }
+                  onClick={() => {
+                    setCurrent((current + 1) % proyectos.length);
+                    setCurrentImage(0);
+                  }}
                   className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
                 >
                   ←
                 </button>
 
                 <button
-                  onClick={() => setCurrent((current + 1) % proyectos.length)}
+                  onClick={() => {
+                    setCurrent(
+                      (current - 1 + proyectos.length) % proyectos.length,
+                    );
+                    setCurrentImage(0);
+                  }}
                   className="rounded-full border border-white/20 px-4 py-2 hover:bg-white/10"
                 >
                   →
