@@ -70,7 +70,7 @@ export default function Hero() {
 
         <div className="mt-16 grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] sm:grid-cols-3">
           <div className="p-7 sm:border-r sm:border-white/10">
-            <h3 className="text-4xl font-bold text-violet-400">2+</h3>
+            <h3 className="text-4xl font-bold text-violet-400">3+</h3>
             <p className="mt-2 text-sm text-slate-400">
               Productos en producción
             </p>
