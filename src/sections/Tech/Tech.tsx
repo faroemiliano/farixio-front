@@ -1,21 +1,20 @@
 import { motion } from "framer-motion";
+import { CalendarCheck, ChartNoAxesCombined, Code2, Gauge, LayoutDashboard, Settings2, Sparkles, Workflow } from "lucide-react";
 
 const solutions = [
-  "Sistemas administrativos",
-  "Reservas online",
-  "Plataformas SaaS",
-
-  "Automatización de procesos",
-  "Sitios web profesionales",
-  "Paneles de gestión",
-  "APIs y backend",
-
-  "Productos digitales escalables",
+  { name: "Sistemas administrativos", icon: Settings2 },
+  { name: "Reservas online", icon: CalendarCheck },
+  { name: "Plataformas SaaS", icon: Sparkles },
+  { name: "Automatización de procesos", icon: Workflow },
+  { name: "Sitios web profesionales", icon: Code2 },
+  { name: "Paneles de gestión", icon: LayoutDashboard },
+  { name: "APIs y backend", icon: Gauge },
+  { name: "Productos digitales escalables", icon: ChartNoAxesCombined },
 ];
 
 export default function Tech() {
   return (
-    <section className="bg-[#050505] px-6 py-24 text-white" id="services">
+    <section className="bg-[#06070a] px-5 py-24 text-white sm:px-6 md:py-32" id="services">
       <motion.div
         className="mx-auto max-w-7xl"
         initial={{ opacity: 0, y: 80 }}
@@ -28,19 +27,20 @@ export default function Tech() {
             Soluciones
           </p>
 
-          <h2 className="mx-auto max-w-3xl text-4xl font-bold md:text-5xl">
-            Desarrollo productos a medida y soluciones digitales para empresas y
-            emprendedores
+          <h2 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight md:text-5xl">
+            Tecnología que se adapta a tu forma de trabajar
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">Desde la primera idea hasta un producto estable en producción, con foco en simplicidad, velocidad y resultados.</p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {solutions.map((solution) => (
+          {solutions.map(({ name, icon: Icon }) => (
             <div
-              key={solution}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center text-lg font-medium backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-violet-500/50 hover:bg-violet-500/10"
+              key={name}
+              className="group rounded-2xl border border-white/[0.08] bg-white/[0.035] p-6 text-left backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:bg-violet-500/[0.08]"
             >
-              {solution}
+              <span className="mb-5 grid h-11 w-11 place-items-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 transition group-hover:bg-violet-500 group-hover:text-white"><Icon size={21} /></span>
+              <span className="text-lg font-semibold">{name}</span>
             </div>
           ))}
         </div>

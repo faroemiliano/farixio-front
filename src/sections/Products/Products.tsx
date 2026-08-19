@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { ArrowLeft, ArrowRight, Check, MessageCircle } from "lucide-react";
 import gestionClientes from "../../assets/barberia/gestionClientes.png";
 import gestionGanancias from "../../assets/barberia/gestionGanancias.png";
 import inicioSite from "../../assets/barberia/inicioSite.png";
@@ -23,23 +24,32 @@ import panelAdmin from "../../assets/estetica/panelAdmin.png";
 import reservarTurno from "../../assets/estetica/reservarTurno.png";
 import verConfirmarTurnos from "../../assets/estetica/verConfirmarTurnos.png";
 
+import catalogoRepuestos from "../../assets/repuestos-palacios/catalogo.png";
+import consultaProducto from "../../assets/repuestos-palacios/consulta-producto.png";
+import contactoRepuestos from "../../assets/repuestos-palacios/contacto.png";
+import detalleProducto from "../../assets/repuestos-palacios/detalle-producto.png";
+import inicioRepuestos from "../../assets/repuestos-palacios/inicio.png";
+
 export default function Products() {
   const [current, setCurrent] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
 
   const proyectos = [
     {
+      shortName: "Barberías",
       tag: "SaaS Multi Tenant",
       title: "Sistema para Barberías",
       description:
-        "Plataforma desarrollada para digitalizar la gestión de barberías mediante reservas online y paneles administrativos.",
+        "Plataforma SaaS multiempresa que digitaliza la operación completa de barberías. Incluye autenticación y experiencias diferenciadas para clientes y administradores, reservas online, control del negocio y personalización para cada establecimiento.",
       features: [
-        "Reservas online",
-        "Panel administrativo",
-        "Multi negocio",
-        "Gestión de usuarios",
-        "Dashboard y métricas",
-        "Personalización visual",
+        "Autenticación por roles",
+        "Portal para clientes",
+        "Panel para administradores",
+        "Reservas y agenda online",
+        "Arquitectura multiempresa",
+        "Clientes y servicios",
+        "Ganancias y métricas",
+        "Identidad por negocio",
       ],
       images: [
         {
@@ -50,7 +60,8 @@ export default function Products() {
         {
           src: loginCliente,
           title: "Login de Cliente",
-          description: "Acceso para los clientes del sistema de barbería.",
+          description:
+            "Autenticación independiente para que cada cliente pueda reservar y consultar sus propios turnos.",
         },
         {
           src: reservaTurno,
@@ -65,7 +76,8 @@ export default function Products() {
         {
           src: loginAdmin,
           title: "Login de Administrador",
-          description: "Acceso para el administrador del sistema de barbería.",
+          description:
+            "Acceso protegido para administrar turnos, clientes, servicios, precios y datos del negocio.",
         },
         {
           src: turnosAdmin,
@@ -99,17 +111,20 @@ export default function Products() {
       ],
     },
     {
-      tag: "Agenda Estetica",
+      shortName: "Estéticas",
+      tag: "Gestión de Turnos",
       title: "Sistema para Estéticas",
       description:
-        "Plataforma para centros de estética con gestión de profesionales, servicios y turnos.",
+        "Sistema integral Multi-Tenant para centros de estética que conecta la reserva del cliente con la gestión interna del negocio. Cuenta con identificación de usuarios, accesos diferenciados y herramientas para coordinar profesionales, servicios, disponibilidad y turnos.",
       features: [
-        "Profesionales",
-        "Calendario",
-        "Servicios",
-        "Clientes",
-        "Recordatorios E-mail",
-        "Configuración",
+        "Acceso de clientes y admin",
+        "Reserva paso a paso",
+        "Agenda y disponibilidad",
+        "Gestión de profesionales",
+        "Servicios y duración",
+        "Base de clientes",
+        "Confirmación de turnos",
+        "Recordatorios por email",
       ],
       images: [
         {
@@ -137,13 +152,14 @@ export default function Products() {
         {
           src: misTurnosClient,
           title: "Mis Turnos",
-          description: "Visualización de los turnos reservados por el cliente.",
+          description:
+            "Área privada donde el cliente identifica y consulta los turnos asociados a su cuenta.",
         },
         {
           src: panelAdmin,
           title: "Panel Administrativo",
           description:
-            "Interfaz para la gestión de la estética por parte del administrador.",
+            "Área de acceso restringido desde la que el administrador controla la operación diaria del centro.",
         },
         {
           src: verConfirmarTurnos,
@@ -175,25 +191,98 @@ export default function Products() {
         },
       ],
     },
+    {
+      shortName: "Repuestos",
+      tag: "Catálogo E-commerce",
+      title: "Repuestos Palacios",
+      description:
+        "Plataforma full stack para digitalizar el catálogo y la atención comercial de una casa de repuestos automotor. Incorpora registro e identificación de usuarios, cuentas de clientes y un acceso administrativo protegido para gestionar productos, precios y consultas.",
+      features: [
+        "Registro e inicio de sesión",
+        "Roles cliente y administrador",
+        "Búsqueda y filtros",
+        "Catálogo con paginación",
+        "Productos y precios",
+        "Consultas contextualizadas",
+        "Administración protegida",
+        "Experiencia responsive",
+      ],
+      images: [
+        {
+          src: inicioRepuestos,
+          title: "Página principal",
+          description:
+            "Presentación del negocio, productos destacados y acceso rápido al catálogo y las consultas.",
+        },
+        {
+          src: catalogoRepuestos,
+          title: "Catálogo de productos",
+          description:
+            "Listado completo con buscador, filtros por categoría, tipo y marca, además de paginación.",
+        },
+        {
+          src: detalleProducto,
+          title: "Detalle del producto",
+          description:
+            "Vista para usuarios identificados con imagen, código, descripción, categoría, precio y acceso directo a la consulta.",
+        },
+        {
+          src: consultaProducto,
+          title: "Consulta por producto",
+          description:
+            "Formulario asociado al repuesto seleccionado para solicitar disponibilidad, precio o información adicional.",
+        },
+        {
+          src: contactoRepuestos,
+          title: "Contacto y atención personalizada",
+          description:
+            "Canales de contacto y formulario para ayudar al cliente a encontrar un repuesto específico.",
+        },
+      ],
+    },
   ];
 
   const proyectoActual = proyectos[current];
 
   return (
-    <section id="projects" className="bg-[#050505] px-6 py-24 text-white">
+    <section
+      id="projects"
+      className="relative bg-[#08090d] px-5 py-24 text-white sm:px-6 md:py-32"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
-            Producto destacado
+            Trabajo reciente
           </p>
 
-          <h2 className="mx-auto max-w-3xl text-4xl font-bold md:text-5xl">
-            {proyectoActual.title}
+          <h2 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight md:text-5xl">
+            Productos pensados para problemas reales
           </h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
+            Explorá las distintas pantallas y funcionalidades de cada
+            plataforma.
+          </p>
+
+          <div className="mt-8 inline-flex rounded-full border border-white/10 bg-black/20 p-1">
+            {proyectos.map((proyecto, index) => (
+              <button
+                key={proyecto.title}
+                onClick={() => {
+                  setCurrent(index);
+                  setCurrentImage(0);
+                }}
+                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${current === index ? "bg-violet-600 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
+                aria-pressed={current === index}
+              >
+                {proyecto.shortName}
+              </button>
+            ))}
+          </div>
         </div>
 
         <motion.div
-          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-lg lg:grid-cols-2"
+          key={current}
+          className="grid gap-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.025] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.28)] backdrop-blur-lg sm:p-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -225,7 +314,7 @@ export default function Products() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 1.02 }}
                     transition={{ duration: 0.75 }}
-                    className="w-full"
+                    className="block h-auto w-full"
                   />
                 </AnimatePresence>
               </div>
@@ -258,9 +347,10 @@ export default function Products() {
                       proyectoActual.images.length,
                   )
                 }
-                className="rounded-full border border-white/20 px-3 py-2 transition hover:bg-white/10"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-violet-400/50 hover:bg-violet-500/10"
+                aria-label="Imagen anterior"
               >
-                ←
+                <ArrowLeft size={17} />
               </button>
 
               <span className="min-w-[70px] text-center text-sm text-gray-400">
@@ -273,9 +363,10 @@ export default function Products() {
                     (currentImage + 1) % proyectoActual.images.length,
                   )
                 }
-                className="rounded-full border border-white/20 px-3 py-2 transition hover:bg-white/10"
+                className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-violet-400/50 hover:bg-violet-500/10"
+                aria-label="Imagen siguiente"
               >
-                →
+                <ArrowRight size={17} />
               </button>
             </div>
           </div>
@@ -284,20 +375,27 @@ export default function Products() {
           {/* Columna derecha */}
           {/* ========================= */}
 
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center px-2 py-5 sm:px-4">
             <span className="w-fit rounded-full bg-violet-600/20 px-4 py-2 text-sm font-semibold text-violet-300">
               {proyectoActual.tag}
             </span>
 
-            <h3 className="mt-4 text-3xl font-bold">{proyectoActual.title}</h3>
+            <h3 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
+              {proyectoActual.title}
+            </h3>
 
             <p className="mt-3 leading-7 text-slate-300">
               {proyectoActual.description}
             </p>
 
-            <div className="mt-5 grid grid-cols-2 gap-3 text-slate-200">
+            <div className="mt-7 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
               {proyectoActual.features.map((feature) => (
-                <div key={feature}>✅ {feature}</div>
+                <div key={feature} className="flex items-center gap-2">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-violet-500/15 text-violet-300">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  {feature}
+                </div>
               ))}
             </div>
 
@@ -306,34 +404,10 @@ export default function Products() {
                 href="https://wa.me/541170612602"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-xl border border-white/15 px-6 py-3 font-semibold transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-[#09090b] transition hover:bg-violet-100"
               >
-                Contactar
+                <MessageCircle size={18} /> Consultar proyecto
               </a>
-            </div>
-
-            <div className="mt-8 flex justify-center gap-4">
-              <button
-                onClick={() => {
-                  setCurrent(
-                    (current - 1 + proyectos.length) % proyectos.length,
-                  );
-                  setCurrentImage(0);
-                }}
-                className="rounded-full border border-white/20 px-4 py-2 transition hover:bg-white/10"
-              >
-                ← Proyecto
-              </button>
-
-              <button
-                onClick={() => {
-                  setCurrent((current + 1) % proyectos.length);
-                  setCurrentImage(0);
-                }}
-                className="rounded-full border border-white/20 px-4 py-2 transition hover:bg-white/10"
-              >
-                Proyecto →
-              </button>
             </div>
           </div>
         </motion.div>

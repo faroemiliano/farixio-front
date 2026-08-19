@@ -1,11 +1,18 @@
+import logo from "../../assets/logoFarixio.png";
+
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050505] text-white">
+    <footer className="border-t border-white/10 bg-[#06070a] text-white">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 px-6 py-16 md:flex-row">
         <div className="max-w-md">
-          <h2 className="mb-4 text-3xl font-bold tracking-wider bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
-            FARIXIO
-          </h2>
+          <a href="#top" className="mb-5 flex w-fit items-center gap-3" aria-label="Farixio, volver al inicio">
+            <span className="grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-sm">
+              <img src={logo} alt="" className="h-13 w-13 object-contain" />
+            </span>
+            <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-2xl font-bold tracking-[0.16em] text-transparent">
+              FARIXIO
+            </span>
+          </a>
 
           <p className="leading-7 text-slate-400">
             Desarrollo de productos digitales, plataformas SaaS y experiencias

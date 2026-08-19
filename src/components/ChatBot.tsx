@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getBotResponse } from "../data/chatbotResponses";
+import { Bot, Send, X } from "lucide-react";
 
 type Message = {
   from: "bot" | "user";
@@ -9,6 +10,7 @@ type Message = {
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const chatEndRef = useRef<HTMLDivElement>(null);
 
   const [chat, setChat] = useState<Message[]>([
     {
@@ -16,6 +18,10 @@ export default function ChatBot() {
       text: "Hola 👋 Soy el asistente de Farixio. ¿En qué puedo ayudarte?",
     },
   ]);
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chat, open]);
 
   function sendMessage() {
     if (!message.trim()) return;
@@ -47,22 +53,23 @@ export default function ChatBot() {
           flex h-14 w-14 items-center justify-center
           rounded-full
           bg-violet-600
-          text-2xl
           text-white
           shadow-[0_0_30px_rgba(139,92,246,0.5)]
           transition
           hover:scale-110
         "
+        aria-label={open ? "Cerrar asistente" : "Abrir asistente"}
+        aria-expanded={open}
       >
-        🤖
+        {open ? <X size={22} /> : <Bot size={23} />}
       </button>
 
       {/* Ventana chat */}
       {open && (
         <div
           className="
-            fixed bottom-24 right-6 z-50
-            flex h-[450px] w-[350px]
+            fixed inset-x-4 bottom-24 z-50
+            flex h-[min(520px,calc(100vh-8rem))]
             flex-col
             overflow-hidden
             rounded-3xl
@@ -70,6 +77,7 @@ export default function ChatBot() {
             bg-[#0b0b0b]
             text-white
             shadow-2xl
+            sm:inset-x-auto sm:right-6 sm:w-[370px]
           "
         >
           {/* Header */}
@@ -81,12 +89,12 @@ export default function ChatBot() {
               px-5 py-4
             "
           >
-            <div className="text-2xl">🤖</div>
+            <div className="grid h-9 w-9 place-items-center rounded-full bg-white/15"><Bot size={19} /></div>
 
             <div>
               <h3 className="font-bold">Farixio AI</h3>
 
-              <p className="text-xs text-white/70">Asistente online</p>
+              <p className="flex items-center gap-1.5 text-xs text-white/70"><span className="h-1.5 w-1.5 rounded-full bg-emerald-300" /> Asistente online</p>
             </div>
           </div>
 
@@ -118,6 +126,7 @@ export default function ChatBot() {
                 {msg.text}
               </div>
             ))}
+            <div ref={chatEndRef} />
           </div>
 
           {/* Input */}
@@ -135,6 +144,7 @@ export default function ChatBot() {
                 if (e.key === "Enter") sendMessage();
               }}
               placeholder="Escribe aquí..."
+              aria-label="Mensaje para el asistente"
               className="
                 flex-1
                 rounded-xl
@@ -155,8 +165,9 @@ export default function ChatBot() {
                 transition
                 hover:bg-violet-500
               "
+              aria-label="Enviar mensaje"
             >
-              ➤
+              <Send size={18} />
             </button>
           </div>
         </div>
