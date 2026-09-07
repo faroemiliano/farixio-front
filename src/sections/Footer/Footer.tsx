@@ -18,6 +18,9 @@ export default function Footer() {
             Desarrollo de productos digitales, plataformas SaaS y experiencias
             web modernas.
           </p>
+          <p className="mt-3 text-sm text-slate-500">
+            Buenos Aires, Argentina · Servicios remotos
+          </p>
         </div>
 
         <nav className="flex flex-col gap-4 text-slate-300">

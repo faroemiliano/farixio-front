@@ -34,8 +34,9 @@ export default function Hero() {
         </h1>
 
         <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400 sm:text-xl">
-          Diseño y desarrollo plataformas, sistemas de gestión y experiencias
-          digitales rápidas, claras y listas para escalar.
+          Desarrollo web full stack, plataformas SaaS y sistemas de gestión a
+          medida para empresas y emprendedores. Soluciones rápidas, claras y
+          listas para escalar.
         </p>
 
         <div className="mt-9 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
