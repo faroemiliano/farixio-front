@@ -39,10 +39,23 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl items-center justify-center px-6 py-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-3 px-6 py-6 sm:flex-row sm:justify-between">
           <p className="text-sm text-slate-500">
             © 2026 Farixio. Todos los derechos reservados.
           </p>
+
+          <a
+            href="https://hits.sh/www.farixio.com/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Ver estadísticas públicas de visitas de Farixio"
+            className="opacity-80 transition hover:opacity-100"
+          >
+            <img
+              src="https://hits.sh/www.farixio.com.svg?style=flat&label=visitas&color=7c3aed&labelColor=0f172a"
+              alt="Contador de visitas de Farixio"
+            />
+          </a>
         </div>
       </div>
     </footer>
