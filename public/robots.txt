@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.farixio.com/sitemap.xml
+Sitemap: https://farixio.com/sitemap.xml
