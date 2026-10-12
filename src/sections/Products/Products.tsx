@@ -38,35 +38,9 @@ import consultaProducto from "../../assets/repuestos-palacios/consulta-producto.
 import contactoRepuestos from "../../assets/repuestos-palacios/contacto.png";
 import detalleProducto from "../../assets/repuestos-palacios/detalle-producto.png";
 import inicioRepuestos from "../../assets/repuestos-palacios/inicio.png";
-import accesoMayorista from "../../assets/mayorista-dux/acceso-mayorista.jpg";
-import detalleMayorista from "../../assets/mayorista-dux/detalle-producto.jpg";
-import productoMayorista from "../../assets/mayorista-dux/tienda-principal.jpg";
-
-const mayoristaImages = [
-  {
-    src: productoMayorista,
-    title: "Experiencia completa del producto",
-    description:
-      "Página de producto con navegación, búsqueda, información comercial, acceso mayorista, contacto y contenido institucional.",
-  },
-  {
-    src: detalleMayorista,
-    title: "Detalle de producto en escritorio",
-    description:
-      "Vista clara del artículo con SKU, condiciones de compra, acceso al stock y precios para usuarios identificados.",
-  },
-  {
-    src: accesoMayorista,
-    title: "Identificación de clientes mayoristas",
-    description:
-      "Ingreso y registro de clientes para proteger precios, stock y pedidos bajo las reglas comerciales de la empresa.",
-  },
-];
-
 export default function Products() {
   const [current, setCurrent] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
-  const [currentMayoristaImage, setCurrentMayoristaImage] = useState(0);
 
   const proyectos = [
     {
@@ -281,7 +255,7 @@ export default function Products() {
   return (
     <section
       id="projects"
-      className="relative bg-[#08090d] px-5 py-24 text-white sm:px-6 md:py-32"
+      className="relative bg-[#0a0a0e] px-5 py-24 text-white sm:px-6 md:py-32"
     >
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 text-center">
@@ -387,87 +361,45 @@ export default function Products() {
           </div>
 
           <div className="relative mt-10 border-t border-white/10 pt-10">
-            <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-violet-300">
-                  Pantallas del proyecto
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-300">
+                  Antes / después
                 </p>
                 <h4 className="mt-2 text-2xl font-bold">
-                  {mayoristaImages[currentMayoristaImage].title}
+                  La transformación digital de Pupas
                 </h4>
-                <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-400">
-                  {mayoristaImages[currentMayoristaImage].description}
+                <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-400 sm:text-base">
+                  Realizamos una migración completa desde WordPress conservando
+                  toda la información del negocio, sin perder estadísticas,
+                  imágenes, productos, pedidos ni clientes. Sobre esa base
+                  construimos una plataforma más completa y escalable, preparada
+                  para acompañar el crecimiento futuro de Pupas.
+                </p>
+                <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-400 sm:text-base">
+                  Incorporamos analítica, comentarios y un sistema de comunicación
+                  segmentada que permite enviar ofertas, novedades y mensajes para
+                  que cada cliente los reciba directamente en su cuenta. También
+                  optimizamos imágenes, recursos y procesos para reducir consumos
+                  innecesarios y evitar costos extra de mantenimiento y despliegue.
                 </p>
               </div>
-
-              <div className="flex shrink-0 items-center gap-3">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setCurrentMayoristaImage(
-                      (currentMayoristaImage - 1 + mayoristaImages.length) %
-                        mayoristaImages.length,
-                    )
-                  }
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-violet-400/50 hover:bg-violet-500/10"
-                  aria-label="Captura anterior del proyecto mayorista"
-                >
-                  <ArrowLeft size={17} />
-                </button>
-                <span className="min-w-12 text-center text-sm text-slate-400">
-                  {currentMayoristaImage + 1} / {mayoristaImages.length}
-                </span>
-                <button
-                  type="button"
-                  onClick={() =>
-                    setCurrentMayoristaImage(
-                      (currentMayoristaImage + 1) % mayoristaImages.length,
-                    )
-                  }
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/15 transition hover:border-violet-400/50 hover:bg-violet-500/10"
-                  aria-label="Captura siguiente del proyecto mayorista"
-                >
-                  <ArrowRight size={17} />
-                </button>
-              </div>
+              <span className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-slate-400">
+                Video del proyecto · 00:37
+              </span>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#090b11] shadow-[0_22px_70px_rgba(0,0,0,0.35)]">
-              <div className="flex items-center gap-2 border-b border-white/10 bg-[#151821] px-5 py-4">
-                <span className="h-3 w-3 rounded-full bg-red-500" />
-                <span className="h-3 w-3 rounded-full bg-yellow-500" />
-                <span className="h-3 w-3 rounded-full bg-green-500" />
-                <span className="ml-3 rounded-full bg-white/5 px-4 py-1 text-xs text-slate-500">
-                  E-commerce mayorista
-                </span>
-              </div>
-              <div
-                className={
-                  currentMayoristaImage === 0
-                    ? "max-h-[680px] overflow-y-auto"
-                    : "overflow-hidden"
-                }
+            <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
+              <video
+                className="block aspect-video w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                aria-label="Video del antes y después del proyecto Pupas"
               >
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentMayoristaImage}
-                    src={mayoristaImages[currentMayoristaImage].src}
-                    alt={mayoristaImages[currentMayoristaImage].title}
-                    loading="lazy"
-                    decoding="async"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="block h-auto w-full"
-                  />
-                </AnimatePresence>
-              </div>
-              {currentMayoristaImage === 0 && (
-                <p className="border-t border-white/10 bg-[#11141c] px-4 py-2 text-center text-xs text-slate-500">
-                  Deslizá dentro de la captura para recorrer la página completa
-                </p>
-              )}
+                <source src="/videos/pupas-antes-despues.m4v" type="video/mp4" />
+                Tu navegador no puede reproducir este video.
+              </video>
             </div>
           </div>
         </motion.article>
@@ -514,6 +446,46 @@ export default function Products() {
           {/* ========================= */}
 
           <div className="space-y-4">
+            {current === 0 ? (
+              <div className="space-y-4">
+                <div className="overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-[#151515] px-5 py-4">
+                    <div className="flex gap-2">
+                      <span className="h-3 w-3 rounded-full bg-red-500" />
+                      <span className="h-3 w-3 rounded-full bg-yellow-500" />
+                      <span className="h-3 w-3 rounded-full bg-green-500" />
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-lime-300">
+                      Antes / después
+                    </span>
+                  </div>
+                  <video
+                    className="block aspect-video w-full object-contain"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    aria-label="Video del antes y después del sistema para barberías"
+                  >
+                    <source
+                      src="/videos/barberia-antes-despues.mp4"
+                      type="video/mp4"
+                    />
+                    Tu navegador no puede reproducir este video.
+                  </video>
+                </div>
+
+                <div className="rounded-2xl border border-lime-300/15 bg-lime-300/[0.055] px-5 py-4">
+                  <h4 className="text-lg font-semibold text-white">
+                    De una gestión manual a una operación digital
+                  </h4>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">
+                    El video muestra la evolución hacia una plataforma completa
+                    de reservas, clientes, servicios y administración del negocio.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
             <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0b0b] shadow-[0_20px_80px_rgba(0,0,0,0.5)]">
               <div className="flex items-center gap-2 border-b border-white/10 bg-[#151515] px-5 py-4">
                 <div className="h-3 w-3 rounded-full bg-red-500" />
@@ -592,6 +564,8 @@ export default function Products() {
                 <ArrowRight size={17} />
               </button>
             </div>
+              </>
+            )}
           </div>
 
           {/* ========================= */}

@@ -63,7 +63,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#090b14] px-5 py-24 text-white sm:px-6 md:py-32"
+      className="relative overflow-hidden bg-[#0a0a0e] px-5 py-24 text-white sm:px-6 md:py-32"
     >
       <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/15 blur-[120px]" />
       <motion.div
@@ -75,11 +75,11 @@ export default function Contact() {
       >
         <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-violet-400">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.35em] text-lime-300">
               Contacto
             </p>
-            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-              ¿Tenés una idea? Hagámosla realidad.
+            <h2 className="text-4xl font-black leading-[1.04] tracking-[-0.04em] md:text-6xl">
+              Tu próximo proyecto empieza acá.
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-400">
               Contame qué querés construir, mejorar o automatizar. Te respondo
@@ -109,7 +109,7 @@ export default function Contact() {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-5 rounded-[2rem] border border-white/10 bg-white/[0.055] p-6 shadow-2xl backdrop-blur-md sm:p-8"
+            className="space-y-5 rounded-[2rem] border border-white/10 bg-[#111218]/90 p-6 shadow-[0_35px_120px_rgba(0,0,0,0.4)] backdrop-blur-xl sm:p-8"
           >
             <div className="text-left">
               <label
@@ -171,7 +171,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 py-3.5 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-70"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-lime-300 py-3.5 font-bold text-[#0b0d09] transition hover:bg-lime-200 disabled:cursor-not-allowed disabled:opacity-70"
             >
               {loading ? (
                 "Enviando..."

@@ -6,17 +6,17 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/15 bg-[#151927]/95 shadow-[0_8px_30px_rgba(0,0,0,0.2)] backdrop-blur-xl">
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[#0b0c10]/80 px-4 shadow-[0_14px_60px_rgba(0,0,0,0.3)] backdrop-blur-2xl sm:px-5">
         <a href="#top" className="flex items-center gap-3" aria-label="Farixio, inicio">
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-white shadow-sm">
-            <img src={logo} alt="" className="h-11 w-11 object-contain" />
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-white shadow-sm">
+            <img src={logo} alt="" className="h-9 w-9 object-contain" />
           </span>
           <span className="text-lg font-extrabold tracking-[0.16em] text-white">FARIXIO</span>
         </a>
 
         {/* Desktop */}
-        <nav className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/[0.04] p-1 md:flex" aria-label="Navegación principal">
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Navegación principal">
           <a
             href="#projects"
             className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
@@ -53,7 +53,7 @@ export default function Navbar() {
           href="https://wa.me/541170612602"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-emerald-400 md:flex"
+          className="hidden items-center gap-2 rounded-full bg-lime-300 px-5 py-2.5 text-sm font-bold text-[#0b0d09] transition hover:-translate-y-0.5 hover:bg-lime-200 md:flex"
           aria-label="Contactar por WhatsApp"
         >
           <MessageCircle size={17} /> WhatsApp
@@ -69,8 +69,8 @@ export default function Navbar() {
         </button>
       </div>
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#090a0f]/95 md:hidden">
-          <nav className="flex flex-col gap-3 p-6">
+        <div className="mx-auto mt-2 max-w-7xl overflow-hidden rounded-2xl border border-white/10 bg-[#090a0f]/95 shadow-2xl backdrop-blur-xl md:hidden">
+          <nav className="flex flex-col gap-3 p-5">
             <a
               href="#projects"
               onClick={() => setMenuOpen(false)}
@@ -109,7 +109,7 @@ export default function Navbar() {
               href="https://wa.me/541170612602"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl bg-emerald-600 px-5 py-3 text-center font-medium text-white transition hover:bg-emerald-700"
+              className="rounded-xl bg-lime-300 px-5 py-3 text-center font-bold text-[#0b0d09] transition hover:bg-lime-200"
             >
               Contactame por WhatsApp
             </a>
