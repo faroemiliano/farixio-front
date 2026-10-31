@@ -258,18 +258,18 @@ export default function Products() {
   return (
     <section
       id="projects"
-      className="relative bg-[#0a0a0e] px-5 py-24 text-white sm:px-6 md:py-32"
+      className="relative bg-[#0a0a0e] px-5 py-20 text-white sm:px-6 md:py-24"
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
             Proyecto principal
           </p>
 
-          <h2 className="mx-auto max-w-4xl text-4xl font-bold tracking-tight md:text-5xl">
+          <h2 className="mx-auto max-w-4xl text-3xl font-bold tracking-tight md:text-4xl">
             E-commerce mayorista + integración Dux
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-400">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base">
             Desarrollo de una plataforma mayorista conectada al sistema de
             gestión utilizado por la empresa.
           </p>
@@ -280,25 +280,25 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="relative mb-28 overflow-hidden rounded-[2rem] border border-violet-400/20 bg-gradient-to-br from-violet-500/[0.12] via-white/[0.055] to-cyan-500/[0.08] p-6 shadow-[0_35px_120px_rgba(76,29,149,0.18)] sm:p-9 lg:p-12"
+          className="relative mb-16 overflow-hidden rounded-3xl border border-violet-400/20 bg-gradient-to-br from-violet-500/[0.1] via-white/[0.045] to-cyan-500/[0.07] p-5 shadow-[0_24px_80px_rgba(76,29,149,0.14)] sm:p-7 lg:p-8"
         >
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-[90px]" />
-          <div className="relative grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="relative grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <span className="inline-flex rounded-full border border-violet-400/25 bg-violet-500/10 px-4 py-2 text-sm font-semibold text-violet-300">
+              <span className="inline-flex rounded-full border border-violet-400/25 bg-violet-500/10 px-3 py-1.5 text-xs font-semibold text-violet-300">
                 Integración de sistemas · Full Stack
               </span>
-              <h3 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
+              <h3 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
                 Una operación mayorista conectada de punta a punta
               </h3>
-              <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+              <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
                 La tienda toma la información centralizada en Dux y la lleva al
                 canal digital mediante una integración por API. Productos,
                 disponibilidad y condiciones comerciales se mantienen
                 coordinados dentro de un mismo flujo.
               </p>
 
-              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
                 {[
                   "Productos sincronizados",
                   "Stock actualizado",
@@ -320,13 +320,13 @@ export default function Products() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-[#090b11]/80 p-5 sm:p-8">
+            <div className="rounded-2xl border border-white/10 bg-[#090b11]/80 p-4 sm:p-5">
               <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
-                <div className="flex flex-1 flex-col items-center rounded-2xl border border-white/10 bg-white/[0.045] p-6 text-center">
-                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-violet-500/15 text-violet-300">
-                    <ShoppingCart size={27} />
+                <div className="flex flex-1 flex-col items-center rounded-xl border border-white/10 bg-white/[0.045] p-4 text-center">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-violet-500/15 text-violet-300">
+                    <ShoppingCart size={22} />
                   </span>
-                  <strong className="mt-4">E-commerce mayorista</strong>
+                  <strong className="mt-3 text-sm">E-commerce mayorista</strong>
                   <span className="mt-1 text-xs text-slate-500">
                     Compra y catálogo
                   </span>
@@ -339,11 +339,11 @@ export default function Products() {
                   </span>
                 </div>
 
-                <div className="flex flex-1 flex-col items-center rounded-2xl border border-white/10 bg-white/[0.045] p-6 text-center">
-                  <span className="grid h-14 w-14 place-items-center rounded-2xl bg-cyan-500/15 text-cyan-300">
-                    <Database size={27} />
+                <div className="flex flex-1 flex-col items-center rounded-xl border border-white/10 bg-white/[0.045] p-4 text-center">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-cyan-500/15 text-cyan-300">
+                    <Database size={22} />
                   </span>
-                  <strong className="mt-4">Sistema Dux</strong>
+                  <strong className="mt-3 text-sm">Sistema Dux</strong>
                   <span className="mt-1 text-xs text-slate-500">
                     Gestión central
                   </span>
@@ -363,23 +363,23 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="relative mt-10 border-t border-white/10 pt-10">
+          <div className="relative mt-8 border-t border-white/10 pt-8">
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-300">
                   Antes / después
                 </p>
-                <h4 className="mt-2 text-2xl font-bold">
+                <h4 className="mt-2 text-xl font-bold">
                   La transformación digital de Pupas
                 </h4>
-                <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-400 sm:text-base">
+                <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-400">
                   Realizamos una migración completa desde WordPress conservando
                   toda la información del negocio, sin perder estadísticas,
                   imágenes, productos, pedidos ni clientes. Sobre esa base
                   construimos una plataforma más completa y escalable, preparada
                   para acompañar el crecimiento futuro de Pupas.
                 </p>
-                <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-400 sm:text-base">
+                <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-400">
                   Incorporamos analítica, comentarios y un sistema de comunicación
                   segmentada que permite enviar ofertas, novedades y mensajes para
                   que cada cliente los reciba directamente en su cuenta. También
@@ -392,7 +392,7 @@ export default function Products() {
               </span>
             </div>
 
-            <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
+            <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_20px_60px_rgba(0,0,0,0.38)]">
               <video
                 className="block aspect-video w-full object-cover"
                 controls
@@ -412,25 +412,25 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="relative mb-28 overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-500/[0.1] via-white/[0.045] to-violet-500/[0.1] p-6 shadow-[0_35px_120px_rgba(8,145,178,0.13)] sm:p-9 lg:p-12"
+          className="relative mb-16 overflow-hidden rounded-3xl border border-cyan-400/20 bg-gradient-to-br from-cyan-500/[0.09] via-white/[0.04] to-violet-500/[0.08] p-5 shadow-[0_24px_80px_rgba(8,145,178,0.1)] sm:p-7 lg:p-8"
         >
           <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-cyan-400/10 blur-[100px]" />
 
-          <div className="relative mb-9 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div className="relative mb-6 grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
                 Configurador deportivo
               </p>
-              <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+              <h2 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
                 CamisetaLibre
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-300">
+              <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
                 Plataforma para crear conjuntos deportivos personalizados y dar
                 identidad a equipos que se presentan en torneos y eventos.
               </p>
             </div>
 
-            <p className="max-w-2xl leading-7 text-slate-400 lg:justify-self-end">
+            <p className="max-w-2xl text-sm leading-6 text-slate-400 lg:justify-self-end">
               Cada equipo puede visualizar su camiseta antes de llevarla a
               producción, agregar su identidad y ajustar los elementos sobre una
               experiencia de edición visual desarrollada especialmente para el
@@ -438,7 +438,7 @@ export default function Products() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl border border-white/10 bg-black shadow-[0_20px_60px_rgba(0,0,0,0.38)]">
             <video
               className="block aspect-video w-full object-contain"
               controls
@@ -451,7 +451,7 @@ export default function Products() {
             </video>
           </div>
 
-          <div className="relative mt-9 grid gap-4 md:grid-cols-3">
+          <div className="relative mt-6 grid gap-3 md:grid-cols-3">
             {[
               {
                 icon: ShoppingCart,
@@ -471,18 +471,18 @@ export default function Products() {
             ].map(({ icon: Icon, title, text }) => (
               <div
                 key={title}
-                className="rounded-2xl border border-white/10 bg-[#090b11]/70 p-6"
+                className="rounded-xl border border-white/10 bg-[#090b11]/70 p-5"
               >
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300">
                   <Icon size={21} />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <h3 className="mt-4 font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-400">{text}</p>
               </div>
             ))}
           </div>
 
-          <div className="relative mt-6 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.035] p-6 lg:grid-cols-2 lg:p-8">
+          <div className="relative mt-4 grid gap-5 rounded-xl border border-white/10 bg-white/[0.035] p-5 lg:grid-cols-2">
             <div>
               <div className="flex items-center gap-3">
                 <Palette size={21} className="text-violet-300" />
@@ -515,19 +515,19 @@ export default function Products() {
           </div>
         </motion.article>
 
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
             Otros proyectos
           </p>
-          <h2 className="mx-auto max-w-3xl text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 className="mx-auto max-w-3xl text-2xl font-bold tracking-tight md:text-3xl">
             Productos pensados para problemas reales
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-400">
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-400">
             Explorá las distintas pantallas y funcionalidades de cada
             plataforma.
           </p>
 
-          <div className="mt-8 inline-flex rounded-full border border-white/10 bg-black/20 p-1">
+          <div className="mt-6 inline-flex max-w-full flex-wrap justify-center rounded-2xl border border-white/10 bg-black/20 p-1">
             {proyectos.map((proyecto, index) => (
               <button
                 key={proyecto.title}
@@ -535,7 +535,7 @@ export default function Products() {
                   setCurrent(index);
                   setCurrentImage(0);
                 }}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${current === index ? "bg-violet-600 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
+                className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${current === index ? "bg-violet-600 text-white shadow-lg" : "text-slate-400 hover:text-white"}`}
                 aria-pressed={current === index}
               >
                 {proyecto.shortName}
@@ -546,7 +546,7 @@ export default function Products() {
 
         <motion.div
           key={current}
-          className="grid gap-8 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.025] p-4 shadow-[0_30px_100px_rgba(0,0,0,0.28)] backdrop-blur-lg sm:p-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12"
+          className="mx-auto grid max-w-5xl gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-4 shadow-[0_22px_70px_rgba(0,0,0,0.24)] backdrop-blur-lg sm:p-5 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -684,19 +684,19 @@ export default function Products() {
           {/* ========================= */}
 
           <div className="flex flex-col justify-center px-2 py-5 sm:px-4">
-            <span className="w-fit rounded-full bg-violet-600/20 px-4 py-2 text-sm font-semibold text-violet-300">
+            <span className="w-fit rounded-full bg-violet-600/20 px-3 py-1.5 text-xs font-semibold text-violet-300">
               {proyectoActual.tag}
             </span>
 
-            <h3 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
+            <h3 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">
               {proyectoActual.title}
             </h3>
 
-            <p className="mt-3 leading-7 text-slate-300">
+            <p className="mt-3 text-sm leading-6 text-slate-300">
               {proyectoActual.description}
             </p>
 
-            <div className="mt-7 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
+            <div className="mt-5 grid gap-2.5 text-sm text-slate-200 sm:grid-cols-2">
               {proyectoActual.features.map((feature) => (
                 <div key={feature} className="flex items-center gap-2">
                   <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-violet-500/15 text-violet-300">
