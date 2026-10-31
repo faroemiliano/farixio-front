@@ -7,8 +7,11 @@ import {
   Boxes,
   Check,
   Database,
+  Layers3,
   MessageCircle,
+  Palette,
   ShoppingCart,
+  Sparkles,
 } from "lucide-react";
 import gestionClientes from "../../assets/barberia/gestionClientes.png";
 import gestionGanancias from "../../assets/barberia/gestionGanancias.png";
@@ -400,6 +403,114 @@ export default function Products() {
                 <source src="/videos/pupas-antes-despues.m4v" type="video/mp4" />
                 Tu navegador no puede reproducir este video.
               </video>
+            </div>
+          </div>
+        </motion.article>
+
+        <motion.article
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="relative mb-28 overflow-hidden rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-500/[0.1] via-white/[0.045] to-violet-500/[0.1] p-6 shadow-[0_35px_120px_rgba(8,145,178,0.13)] sm:p-9 lg:p-12"
+        >
+          <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-cyan-400/10 blur-[100px]" />
+
+          <div className="relative mb-9 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+                Configurador deportivo
+              </p>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">
+                CamisetaLibre
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                Plataforma para crear conjuntos deportivos personalizados y dar
+                identidad a equipos que se presentan en torneos y eventos.
+              </p>
+            </div>
+
+            <p className="max-w-2xl leading-7 text-slate-400 lg:justify-self-end">
+              Cada equipo puede visualizar su camiseta antes de llevarla a
+              producción, agregar su identidad y ajustar los elementos sobre una
+              experiencia de edición visual desarrollada especialmente para el
+              proyecto.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-black shadow-[0_28px_90px_rgba(0,0,0,0.45)]">
+            <video
+              className="block aspect-video w-full object-contain"
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="Demostración del configurador de conjuntos deportivos CamisetaLibre"
+            >
+              <source src="/videos/camiseta-libre.m4v" type="video/mp4" />
+              Tu navegador no puede reproducir este video.
+            </video>
+          </div>
+
+          <div className="relative mt-9 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                icon: ShoppingCart,
+                title: "Diseños listos",
+                text: "El usuario elige una camiseta del catálogo con su diseño y colores previamente definidos.",
+              },
+              {
+                icon: Layers3,
+                title: "Edición por capas",
+                text: "Permite cambiar por separado cuerpo, mangas, cuello, líneas y detalles de cada modelo.",
+              },
+              {
+                icon: Sparkles,
+                title: "Diseños creados con IA",
+                text: "El equipo carga una imagen creada a su gusto y conserva el diseño y los colores originales.",
+              },
+            ].map(({ icon: Icon, title, text }) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-white/10 bg-[#090b11]/70 p-6"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                  <Icon size={21} />
+                </span>
+                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="relative mt-6 grid gap-6 rounded-2xl border border-white/10 bg-white/[0.035] p-6 lg:grid-cols-2 lg:p-8">
+            <div>
+              <div className="flex items-center gap-3">
+                <Palette size={21} className="text-violet-300" />
+                <h3 className="text-lg font-semibold">Personalización completa</h3>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                En los tres métodos se pueden incorporar escudo, sponsors,
+                nombre y número, ajustando el tamaño y la ubicación de cada
+                elemento para completar el conjunto.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-violet-300">
+                Tecnologías utilizadas
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["React", "TypeScript", "React Konva", "Python", "FastAPI", "PostgreSQL"].map(
+                  (technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-full border border-white/10 bg-white/[0.05] px-3.5 py-2 text-sm text-slate-300"
+                    >
+                      {technology}
+                    </span>
+                  ),
+                )}
+              </div>
             </div>
           </div>
         </motion.article>
