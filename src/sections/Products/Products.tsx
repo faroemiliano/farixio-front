@@ -397,7 +397,7 @@ export default function Products() {
                 className="block aspect-video w-full object-cover"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
                 aria-label="Video del antes y después del proyecto Pupas"
               >
                 <source src="/videos/pupas-antes-despues.m4v" type="video/mp4" />
@@ -443,7 +443,7 @@ export default function Products() {
               className="block aspect-video w-full object-contain"
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               aria-label="Demostración del configurador de conjuntos deportivos CamisetaLibre"
             >
               <source src="/videos/camiseta-libre.m4v" type="video/mp4" />
@@ -574,7 +574,7 @@ export default function Products() {
                     className="block aspect-video w-full object-contain"
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     aria-label="Video del antes y después del sistema para barberías"
                   >
                     <source
